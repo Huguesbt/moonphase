@@ -28,26 +28,3 @@ func ParsePhaseStr(phaseStr string) Phase {
 	}
 	return Phase{}
 }
-
-func ParsePhaseInt(phaseInt int) Phase {
-	for _, phase := range phases {
-		if phaseInt == phase.Int {
-			return phase
-		}
-	}
-	return Phase{}
-}
-
-func ParsePhaseFloat(phaseFloat float64) Phase {
-	if phaseFloat < 0.125 {
-		return NewMoon
-	} else if phaseFloat < 0.375 {
-		return FirstQuarter
-	} else if phaseFloat < 0.625 {
-		return FullMoon
-	} else if phaseFloat < 0.875 {
-		return LastQuarter
-	} else {
-		return NewMoon
-	}
-}
